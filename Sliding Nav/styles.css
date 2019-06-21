@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: rgb(191, 102, 64);
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+  color: rgb(226,226,226);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links a {
+  color: rgb(226,226,226);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-size: 14px; 
+  font-weight: bold;
+  display: block;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.burger div {
+  margin: 5px;
+  width: 25px;
+  height: 3px;
+  background-color: rgb(226,226,226);
+  transition: all 0.3s ease;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-links {
+    width: 60%;
+  }
+  
+}
+
+@media screen and (max-width: 765px) {
+  
+    html, body {
+      overflow-x: hidden !important;
+      /* position: relative; */
+    }
+
+    .nav-links {
+      position: absolute;
+      right: 0px;
+      top: 7.9vh;
+      height: 92.5vh;
+      width: 50%;
+      background-color: rgb(191, 102, 64);
+      display: flex; 
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(100vw);
+      /* transition: transform 0.6s out; */
+      animation: navSlideOut 0s forwards;
+    }
+
+    .nav-links li {
+      opacity: 0;
+      /* transition: opacity 1s; */
+    }
+
+    .burger {
+      display: block;
+    }
+
+}
+
+.nav-active {
+  animation: navSlide 0.5s ease both;
+  /* transform: translateX(0%);
+  transition: transform 0.6s ease-in-out; */
+  /* background-color: rgb(191, 102, 64); */
+}
+
+.nav-off {
+  animation: navSlideOut 1s ease both; 
+}
+
+@keyframes navSlide {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes navSlideOut {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes navLinkFade {
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transfrom: translateX(0px);
+  }
+}
+
+@keyframes navLinkFadeOut{
+  from{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px,-6px);
+}
