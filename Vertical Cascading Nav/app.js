@@ -16,7 +16,7 @@ $els.each(function(j){
 $('.menu footer button').on('click',function(e){
     e.preventDefault();
     $els.each(function(j){
-        $(this).css('--top',$(this)[0].getBoundingClientRect().top + ($(this).attr('data-group') * -15) - 20);
+        $(this).css('--top',$(this)[0].getBoundingClientRect().top + ($(this).attr('data-group') * -15) - 20 +"px");
         $(this).css('--delay-in',j*.1+'s');
         $(this).css('--delay-out',(count-j)*.1+'s');
     });
@@ -24,11 +24,11 @@ $('.menu footer button').on('click',function(e){
     e.stopPropagation();
 });
 
-// run animation once at beginning for demo
-setTimeout(function(){
-    $('.menu footer button').click();
-    setTimeout(function(){
-        $('.menu footer button').click();
-    }, (count * 100) + 500 );
-}, 1000);
+// // run animation once at beginning for demo
+// setTimeout(function(){
+//     $('.menu footer button').click();
+//     setTimeout(function(){
+//         $('.menu footer button').click();
+//     }, (count * 100) + 500 );
+// }, 1000);
 
